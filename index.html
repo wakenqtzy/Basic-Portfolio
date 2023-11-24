@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Portfolio</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+
+</head>
+
+
+
+<body>
+  <!-- Navigation Bar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto mx-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#about">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#gallery">Gallery</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#contact">Contact</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- About Section -->
+  <section id="about" class="py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6">
+          <h2>About Me</h2>
+          <p class="p1">Greetings! I'm Joaquin Cuenca, and I'm currently a College Student taking Bachelor of Science in Computer Science at Mabini Colleges. 
+            Allow me to give you a glimpse into my academic journey and who I am as a student and individual. Academic Journey I embarked on
+            my computer science adventure at Mabini Colleges with a passion for problem-solving and a deep curiosity about technology's inner 
+            workings. Over the past three years, I've gained a solid foundation in computer science principles, programming languages, and data 
+            structures. My courework has covered a wide range of topics, from algorithms and software development to database management 
+            and artificial intelligence. I have consistently maintained a strong academic record and actively seek opportunities to 
+            apply classroom knowledge to real-world challenges.</p>
+        </div>
+
+        <div class="col-lg-6">
+          <img src="images/main.png" alt="main picture" class="img-fluid rounded-circle">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Portfolio Section -->
+  <section id="gallery" class="py-5 bg-light">
+    <div class="container">
+      <h1 class="text-center mt-5 mb-4">Photo Gallery</h1>
+
+      <div class="row">
+
+          <div class="col-md-4 mb-4">
+              <img src="images/4.jpg" class="img-fluid rounded-circle">
+          </div>
+          <div class="col-md-4 mb-4">
+              <img src="images/1x1.jpg" class="img-fluid rounded-circle  ">
+          </div>
+          <div class="col-md-4 mb-4">
+              <img src="images/me.jpg" class="img-fluid rounded-circle">
+          </div>
+
+          <!-- Add more images as needed -->
+      </div>
+
+  </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-5">
+    <div class="container">
+      <h2>Contact Me</h2>
+
+      <form action="your_form_handler.php" method="post">
+        <div class="form-group">
+          <label for="name">Your Name:</label>
+          <input type="text" class="form-control" id="name" name="name" required>
+        </div>
+  
+        <div class="form-group">
+          <label for="email">Your Email:</label>
+          <input type="email" class="form-control" id="email" name="email" required>
+        </div>
+  
+        <div class="form-group">
+          <label for="message">Your Message:</label>
+          <textarea class="form-control" id="message" name="message" rows="4" required></textarea>
+        </div>
+  
+        <button type="submit" class="btn btn-primary">Submit</button>
+
+      </form>
+
+  </section>
+
+
+
+  <button id="scrollToTopBtn" onclick="scrollToTop()">Scroll to Top</button>
+
+  <script>
+      document.addEventListener("DOMContentLoaded", function () {
+          var scrollToTopBtn = document.getElementById("scrollToTopBtn");
+          var sections = document.querySelectorAll("section");
+
+          window.onscroll = function () {
+              showScrollButton();
+          };
+
+          function showScrollButton() {
+              if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                  scrollToTopBtn.style.display = "block";
+              } else {
+                  scrollToTopBtn.style.display = "none";
+              }
+          }
+
+          scrollToTopBtn.addEventListener("click", function () {
+              smoothScrollToTop();
+          });
+
+          function smoothScrollToTop() {
+              window.scrollTo({
+                  top: 0,
+                  behavior: "smooth"
+              });
+          }
+
+          sections.forEach(function (section) {
+              section.addEventListener("click", function () {
+                  smoothScrollToSection(section);
+              });
+          });
+
+          function smoothScrollToSection(section) {
+              window.scrollTo({
+                  top: section.offsetTop,
+                  behavior: "smooth"
+              });
+          }
+      });
+  </script>
+
+<footer class="bg-dark text-white mt-5 p-4">
+  <div class="container">
+      <div class="row">
+          <div class="col-md-6">
+              <h5>Contact</h5>
+              <p>Email: jcuenca633@gmail.com</p>
+              <p>Phone: +63 965 612 1577</p>
+          </div>
+          <div class="col-md-6">
+              <h5>Follow Me</h5>
+              <ul class="list-unstyled">
+                  <li><a href="https://www.facebook.com/wacky1122">Facebook</a></li>
+                  <li><a href="https://www.linkedin.com/in/joaquin-isaac-cuenca-94219b293/">LinkedIn</a></li>
+                  <li><a href="https://github.com/wakenqtzy">Github</a></li>
+              </ul>
+          </div>
+      </div>
+  </div>
+</footer>
+
+  <button id="scrollToTopBtn" onclick="scrollToTop()">Scroll to Top</button>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+
+</html>
